@@ -17,6 +17,7 @@
   * Default port - 8000
 * **Client** - POS / Kiosk
   * Default port - 8010
+  * Designed for touch interface (ideally tablet)
 
 
 # **How to run**
