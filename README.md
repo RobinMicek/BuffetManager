@@ -87,6 +87,7 @@ POS / Kiosk  can be accessed on [`https://local-server-ip:8010`]()
 
 ## **ToDo**
 * Dockerization - Ability to run all three parts in Docker (easier for user setup)
+* Optimize dashboard interface for smaller screens 
 
 
 
