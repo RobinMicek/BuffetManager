@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+<div align="center">
+    <h1 style="margin-bottom: 0px;"
+        >TRANSACTIONS</h1>
+
+        <hr style="width: 5vw">
+        <br><br>
+</div>
+
+
+
+<div align="center">
+    <div style="width: 90%;">
+
+
+        <table style="width: 90%; text-align: left;">
+            <!--Table head-->
+            <tr>
+                <th>
+                    <span class="material-icons">tag</span>
+                </th>
+                <th>
+                    <span class="material-icons">description</span>
+                </th>
+                <th>
+                    <span class="material-icons">today</span>
+                </th>
+                <th>
+                    <span class="material-icons">schedule</span>
+                </th>
+                <th>
+                    <span class="material-icons">payments</span>
+                </th>
+            </tr>
+
+
+
+            
+
+            <!--Table body-->
+            {% for x in transactions %}
+            <div>
+                <tr style="font-weight: 300 !important;">
+                    <th><h3>{{ x["tid"] }}</h3></th>
+                    <th><h3>{{ x["account"] }}</h3></th>
+                    <th><h3>{{ x["date"] }}</h3></th>
+                    <th><h3>{{ x["time"] }}</h3></th>
+                    <th><h3>{{ x["price"] }}</h3></th>
+                </tr>
+            </div>
+            {% endfor %}
+            
+        </table>
+        
+
+    </div>
+</div>
+
+{% endblock %}

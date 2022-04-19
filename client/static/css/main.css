@@ -1,0 +1,102 @@
+/* GOOGLE FONTS */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,900;1,300;1,400&display=swap');
+
+/* GENERAL */
+:root {
+    --secondary: #fff;
+    --black: #111;
+    --hover: rgb(255, 238, 0);
+
+    --green: rgb(84, 209, 0);
+
+    --font-family: 'Poppins', sans-serif
+}
+
+body {
+    width: 100%;
+    font-family: var(--font-family);
+    font-weight: 400;
+    padding: 0px;
+    margin: 0px; 
+
+    background-color: var(--black)
+}
+
+h1 {
+    font-weight: 300;
+}
+h2 {
+    font-weight: 600;
+}
+h3 {
+    font-weight: 300;
+}
+
+
+/* Sidebar */
+.sidebar {
+            
+    height: 100%; /* Full-height: remove this if you want "auto" height */
+    width: 25%; /* Set the width of the sidebar */
+    position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+    z-index: 1; /* Stay on top */
+    top: 0; /* Stay at the top */
+    right: 0;
+    background-color: var(--secondary); /* White background */
+    overflow-x: hidden !important; /* Disable horizontal scroll */
+    padding-top: 20px;
+
+    border-radius: 0vh 0vh 0vh 10vh;
+}
+
+/* Products */
+.product-container {
+
+    padding-top: 2vh;
+    padding-bottom: 2vh;
+    width: 90%;
+
+
+    border-radius: 1vh;
+
+    margin-top: 2vh;
+    margin: 1vh;
+
+    text-align: center;
+    
+    color: var(--black); 
+    background-color: var(--secondary);
+
+}
+
+.product-container:hover {
+    background-color: var(--hover);
+}
+
+
+
+
+.sidebar button {
+    width: 100%;
+
+    padding: 5vh;
+
+    border: none;
+
+    position: sticky;
+    bottom: 0 !important;
+}
+
+button:hover {
+    cursor: pointer !important;
+}  
+
+a {
+    text-decoration: none !important;
+    
+    color: var(--black) !important;
+}
+
+button {
+    color: var(--black) !important;
+}

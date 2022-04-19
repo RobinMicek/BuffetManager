@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+<div align="center">
+
+    <div style="width: 35%; margin-top: 10vh;">
+        <h1 style="margin-bottom: 0px;"
+        >{{CONFIG["name"]}}</h1>
+
+        <hr style="width: 5vw">
+
+        <h2 style="margin-top: 0px"
+        >First Time Setup</h2>
+
+        <form method="POST">
+
+            <input type='text' name='name' placeholder="Buffet Name">
+            <br>
+
+            <input type='text' name='description' placeholder="Description">
+
+            <input type='hidden' name='key' value='{{auth_code}}'>
+            <br>
+
+            <hr style="width: 100%">
+            
+            <h2 style="margin-bottom: 0px;"
+            >THIS APP USES GOOGLE AUTHENTICATOR TO LOGIN</h2>
+            <p>PLEASE SCAN QR CODE BELOW WITH THE AUTHENTICATOR APP</p>
+
+            <img style="width: 50%;" src="{{auth_img}}">
+
+            
+            <button type="submit">
+                CONTINUE
+            </button>
+        </form>
+    </div>
+    
+
+</div>
+
+
+
+
+
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div align="center">
+
+    <div style="width: 35%; margin-top: 30vh;">
+        <h1 style="margin-bottom: 0px;"
+        >{{CONFIG["name"]}}</h1>
+
+        <hr style="width: 5vw">
+
+
+        <form method="POST">
+
+             <br>
+            <input type="text" name="code" placeholder="Code">
+
+            <br>
+            <button type="submit">
+                login
+            </button>
+        </form>
+    </div>
+    
+
+</div>
+
+
+{% endblock %}

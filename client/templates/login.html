@@ -1,0 +1,111 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+<head>
+    
+</head>
+
+<style>
+
+    body {
+        /*
+        background-image: url(/static/img/wallpaper.jpg);
+        
+        background-repeat: no-repeat;
+        background-size: cover !important;
+        background-position: center;
+        */
+
+        color: white;
+
+    }
+
+    .box {
+        background-color: rgb(255, 255, 255);
+        color: black;
+        
+        margin-bottom: 1vh;
+        width: 50%;
+
+        border-radius: 3vh;
+
+
+    
+    }
+
+    button.num {
+
+        background-color: white;
+
+        width: 32%;
+        height: 15vh;
+
+        border: none;
+
+        font-size: 5vh;
+    }
+
+    button.sub {
+        background-color: white;
+
+        width: 100%;
+
+        border: none;
+    }
+
+    input {
+        width: 35%;
+        margin: none;
+
+        border: none;
+
+        font-size: 10vh;
+    }
+
+</style>
+
+
+
+<div align="center">
+
+    <h2 style="font-size: 7vh; margin-top: 1vh;">
+        BUFFET MANAGER
+    </h2>
+
+
+    <div class="box">
+
+        <form method="POST">
+        
+            <input type=text id="pin" name="pin">
+            <br>
+
+            <button type="button" class="num" onclick="var pin = document.getElementById('pin').value; document.getElementById('pin').value = pin + '1'">1</button>
+            <button type="button" class="num" onclick="var pin = document.getElementById('pin').value; document.getElementById('pin').value = pin + '2'">2</button>
+            <button type="button" class="num" onclick="var pin = document.getElementById('pin').value; document.getElementById('pin').value = pin + '3'">3</button> <br>
+            <button type="button" class="num" onclick="var pin = document.getElementById('pin').value; document.getElementById('pin').value = pin + '4'">4</button>
+            <button type="button" class="num" onclick="var pin = document.getElementById('pin').value; document.getElementById('pin').value = pin + '5'">5</button>
+            <button type="button" class="num" onclick="var pin = document.getElementById('pin').value; document.getElementById('pin').value = pin + '6'">6</button> <br>
+            <button type="button" class="num" onclick="var pin = document.getElementById('pin').value; document.getElementById('pin').value = pin + '7'">7</button>
+            <button type="button" class="num" onclick="var pin = document.getElementById('pin').value; document.getElementById('pin').value = pin + '8'">8</button>
+            <button type="button" class="num" onclick="var pin = document.getElementById('pin').value; document.getElementById('pin').value = pin + '9'">9</button> <br>
+
+            <br>
+            <br>
+            <button type="submit" class="sub">
+                <span class="material-icons" style="font-size: 7vh;">login</span>
+            </button>
+            <br>
+            <br>
+
+        </form>
+
+    </div>
+
+
+</div>
+
+
+{% endblock %}

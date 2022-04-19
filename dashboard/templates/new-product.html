@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+<div align="center">
+
+    <div style="width: 35%; margin-top: 10vh;">
+        <h1 style="margin-bottom: 0px;"
+        >NEW PRODUCT</h1>
+
+        <hr style="width: 5vw">
+
+        <h2 style="margin-top: 0px"
+        >Create Product</h2>
+
+        <form method="POST">
+
+            <input type='text' name='name' placeholder="Product Name" required>
+            <br>
+
+            <input type='text' name='category' placeholder="Category" required>
+            <br>
+
+            <hr style="width: 100%">
+            <br>
+            
+            <input type='number' name='price' placeholder="Price" step="0.01" required>
+            <br>
+
+            <input type='number' name='stock' placeholder="Stock" required>
+            <br>
+
+            <select name="visible" placeholder="Visible" required>
+                <option value="True">Visible</option>
+                <option value="False">Invisible</option> 
+            </select>
+            <br>
+
+
+            
+            <button type="submit">
+                SUBMIT
+            </button>
+        </form>
+    </div>
+    
+
+</div>
+
+
+
+
+
+{% endblock %}

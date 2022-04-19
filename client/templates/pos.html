@@ -1,0 +1,145 @@
+{% extends 'base.html' %}
+
+
+
+
+{% block content %}
+
+<style>
+    .container-pos {
+    display: grid; 
+    grid-template-columns: 3fr 1fr; 
+    grid-template-rows: 1fr; 
+    gap: 0px 0px; 
+    grid-template-areas: 
+        "products sidebar"; 
+    }
+    .products { grid-area: products; }
+    .sidebar { grid-area: sidebar; }
+</style>
+
+
+<div class="container-pos">
+    <div class="products" style="overflow-y:visible !important;">
+
+        <div>
+            <style>
+                .container-cats {
+                    display: grid; 
+                    grid-template-columns: 1fr 1fr; 
+                    grid-template-rows: 1fr; 
+                    gap: 0px 0px; 
+                    grid-template-areas:
+                    "cat cat"
+                }
+
+                .container-cats button {
+                    width: 100%;
+                    border: none;
+                }
+            </style>
+
+            <div class="container-cats">
+                <a href="/logout">
+                    <button style="background-color: var(--green);">                
+                        <h2><span class="material-icons">logout</span></h2>
+                    </button>
+                </a>
+                
+                <a href="/">
+                    <button style="background-color: rgb(255, 38, 0);">                
+                        <h2><span class="material-icons">replay</span></h2>
+                    </button>
+                </a>
+            </div>
+        </div>
+
+
+
+        <style>
+            .container-products {
+                display: grid; 
+                grid-template-columns: 1fr 1fr 1fr 1fr; 
+                grid-template-rows: 1fr; 
+                gap: 0px 0px; 
+                grid-template-areas:
+                "product product product product"
+            }
+        </style>
+
+        <div class="container-products">
+ 
+            {% for x in products %}
+
+                {% if x["stock"] > 0 %}
+                <a href="/action/add-to-cart?product-id={{ x['id'] }}">
+                    <div class="product-container product">
+                        <h2>{{ x["name"] }}</h2>
+                        <h3>{{ x["category"] }}</h3> 
+                    </div>
+                </a>
+                {% else %}
+                    <div class="product-container product" style="background-color: red;">
+                        <h2>{{ x["name"] }}</h2>
+                        <h3>{{ x["category"] }}</h3> 
+                    </div>
+                {% endif %}
+            
+            {% endfor %}
+
+        </div>
+        
+        
+
+    </div>
+
+
+    <!--Sidebar-->
+    <div class="sidebar">
+        <div align="center"> 
+            <!--Account name-->
+            <h2>{{ name }}</h2>
+
+
+            <div>
+                <table style="width: 100%;">
+                    <!--Table body-->
+                    {% for x in cart %}
+                    <tr>
+                        <!--
+                        <th>
+                            <h2 style="margin-bottom: 0; font-size: 1vw;">{{ x["quantity"] }}x</h2>
+                        </th>
+                        -->
+                        <th>
+                            <h2 style="margin-bottom: 0; font-size: 1vw;">{{ x["name"] }}</h2>
+                        </th>
+                        <th>
+                            <h2 style="margin-bottom: 0; font-size: 1vw;">{{ x["price"] }}</h2>
+                        </th>
+                    </tr>
+                    {% endfor %}
+                </table>
+
+                <hr style="width: 90%;">
+
+                <h2>{{ total }}</h2>
+
+                
+            </div>
+
+        </div>
+        {% for i in range(50) %}
+        <br>
+        {% endfor %}
+
+        <a href="/action/pay">
+            <button style="background-color: var(--hover);">
+                <h1><span class="material-icons">attach_money</span></h1>
+            </button>
+        </a>
+        
+
+    </div>
+     
+{% endblock %}

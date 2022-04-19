@@ -1,0 +1,87 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+<div align="center">
+    <h1 style="margin-bottom: 0px;"
+        >PRODUCTS</h1>
+
+        <hr style="width: 5vw">
+        <br><br>
+</div>
+
+
+
+<div align="center">
+    <div style="width: 90%;">
+
+        <div align="left" style="width: 90%;">
+            <a href="/product/new">
+                <span class="material-icons" style="color: var(--black);">add</span>
+            </a>
+            <br><br>
+        </div>
+
+        <table style="width: 90%; text-align: left;">
+            <!--Table head-->
+            <tr>
+                <th>
+                    <span class="material-icons">visibility</span>
+                </th>
+                <th>
+                    <span class="material-icons">description</span>
+                </th>
+                <th>
+                    <span class="material-icons">category</span>
+                </th>
+                <th>
+                    <span class="material-icons">inventory</span>
+                </th>
+                <th>
+                    <span class="material-icons">bar_chart</span>
+                </th>
+                <th>
+                    <span class="material-icons">sell</span>
+                </th>
+                <th>
+                    <span class="material-icons"></span>
+                </th>
+            </tr>
+
+
+
+            
+
+            <!--Table body-->
+            {% for x in products %}
+            <div>
+                <tr style="font-weight: 300 !important;">
+                    <th>
+                        {% if x["visible"] == 1 %}
+                        <span style="color: rgb(0, 180, 0);">⬤</span>
+                        {% else %}
+                        <span style="color: red">⬤</span>
+                        {% endif %}
+                    </th>
+                    <th><h3>{{ x["name"] }}</h3></th>
+                    <th><h3>{{ x["category"] }}</h3></th>
+                    <th><h3>{{ x["stock"] }}</h3></th>
+                    <th><h3>{{ x["sold"] }}</h3></th>
+                    <th><h3>{{ x["price"] }}</h3></th>
+                    <th>
+                        <a href="/product/info?id={{ x['id'] }}">
+                            <span class="material-icons" style="color: var(--black)">settings</span>
+                        </a>
+                    </th>
+                </tr>
+            </div>
+            {% endfor %}
+            
+        </table>
+        
+
+    </div>
+</div>
+
+{% endblock %}

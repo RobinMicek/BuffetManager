@@ -1,0 +1,101 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<style>
+    .cont {
+    display: grid; 
+    grid-template-columns: 1fr 1fr; 
+    grid-template-rows: 1fr; 
+    gap: 10vw; 
+    grid-template-areas: 
+        "g-1 g-2"; 
+    }
+    .g-1 { grid-area: g-1; }
+    .g-2 { grid-area: g-2; }
+</style>
+
+
+<div align="center">
+
+    <div style="width: 90%; margin-top: 2vh;">
+
+        
+        <div class="cont">
+            <div class="g-1" style="text-align: left;">
+
+                <h1>Properities</h1>
+
+                <form method="POST">
+    
+                    <input type='text' name='name' placeholder="Product Name" required value="{{ product['name'] }}"> 
+                    <br>
+        
+                    <input type='text' name='category' placeholder="Category" required value="{{ product['category'] }}">
+                    <br>
+        
+                    <hr style="width: 100%">
+                    <br>
+                    
+                    <input type='number' name='price' placeholder="Price" step="0.01" required value="{{ product['price'] }}">
+                    <br>
+        
+                    <input type='number' name='stock' placeholder="Stock" required value="{{ product['stock'] }}">
+                    <br> 
+                
+                    <select name="visible" placeholder="Visible" required>
+                        {% if product["visible"] == 1 %}
+                            <option value="True" selected>Visible</option>
+                            <option value="False">Invisible</option>
+                        {% elif product["visible"] == 0 %}  
+                            <option value="True">Visible</option>
+                            <option value="False" selected>Invisible</option> 
+                        {% endif %}
+                    </select>
+                    <br>
+
+                    <input type="hidden" name="id" value="{{ product['id'] }}" required>
+                    
+                    <button type="submit">
+                        SUBMIT
+                    </button>
+                </form>
+            </div>
+    
+
+
+            <div class="g-2" style="text-align: left;">
+                <h1>Info</h1>
+
+                <h1>
+                {% if product["visible"] == 1 %}
+                    <span style="color: rgb(0, 180, 0);">⬤</span>
+                {% else %}
+                    <span style="color: red">⬤</span>
+                {% endif %}
+                </h1>
+
+                <p>
+                    ID: # {{ product["id"] }} <br>
+                    <br>
+                    Price: {{ product["price"] }} <br>
+                    Category: {{ product["category"] }}
+                    <br>
+                    Stock: {{ product["stock"] }} <br>
+                    Sold: {{ product["sold"] }}
+                </p>
+            </div>
+
+        </div>
+        
+        
+    </div>
+    
+
+</div>
+
+
+
+
+
+{% endblock %}

@@ -1,0 +1,132 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+<style>
+.stat-box {
+    width: 60%;
+
+    padding: 5vh;
+    margin: 5vh;
+
+    border-radius: 5vh;
+
+    box-shadow: 5px 5px 16px 5px rgba(0,0,0,0.3);
+}
+
+.stat-box-half {
+    width: 30% !important;
+}
+
+img {
+    width: auto;
+    height: auto;
+}
+
+.stats {
+    font-size: 5vh !important;
+    font-weight: 500;
+    
+    margin: 0px;
+
+}
+
+h2 {
+    margin: 0px;
+    font-weight: 500;
+}
+
+h6 {
+    margin: 0px;
+    font-weight: 400;
+}
+
+
+
+
+.container-analytics {
+    display: grid; 
+    grid-template-columns: 1fr 1fr 1fr; 
+    grid-template-rows: 1fr; 
+    gap: 0px 0px; 
+    grid-template-areas: 
+        ". . ."; 
+    }
+</style>
+
+<div align="center">
+
+    <h1 style="margin-bottom: 0px;">{{CONFIG["name"]}}</h1>
+    <hr style="width: 10%;">
+
+    <div class="stat-box">
+        <h1 style="margin-top: 0;">TRANSACTIONS</h1>
+        <img src={{transactions}} alt="Transactions" style="max-width: 100%;">
+    </div>
+
+    <div class="stat-box container-analytics">
+        <div>
+            <h1>SALES</h1>
+            <br>
+
+            <h1 class="stats">{{ analytics["sales"]["today"] }}</h1>
+            <h6>TODAY</h6>
+            
+            <br>
+
+            <h2>{{ analytics["sales"]["all-time"] }}</h2>
+            <h6>ALL TIME</h6>
+        </div>
+
+        <div>
+            <h1>TRANSACTIONS</h1>
+            <br>
+
+            <h1 class="stats">{{ analytics["transactions"]["today"] }}</h1>
+            <h6>TODAY</h6>
+
+
+            <br>
+
+            <h2>{{ analytics["transactions"]["all-time"] }}</h2>
+            <h6>ALL TIME</h6>
+        </div>
+
+        <div>
+            <h1>SOLD</h1>
+            <br>
+
+            <h1 class="stats">{{ analytics["sold"]["today"] }}</h1>
+            <h6>TODAY</h6>
+
+            <br>
+
+            <h2>{{ analytics["sold"]["all-time"] }}</h2>
+            <h6>ALL TIME</h6>
+        </div>
+
+    </div>
+
+    <div class="stat-box stat-box-half">
+        <h1>MOST SOLD PRODUCTS</h1>
+
+        <img src={{top_products_all}} alt="Most Sold Products Of All Time" style="max-width: 40%">
+    </div>
+
+    
+
+    <div>     
+             
+    
+        
+    </div>
+
+    
+     
+   
+</div>
+
+
+
+{% endblock %}

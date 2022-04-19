@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+<div align="center">
+    <h1 style="margin-bottom: 0px;"
+        >ACCOUNTS</h1>
+
+        <hr style="width: 5vw">
+        <br><br>
+</div>
+
+
+
+<div align="center">
+    <div style="width: 90%;">
+
+        <div align="left" style="width: 90%;">
+            <a href="/account/new">
+                <span class="material-icons" style="color: var(--black);">add</span>
+            </a>
+            <br><br>
+        </div>
+
+        <table style="width: 90%; text-align: left;">
+            <!--Table head-->
+            <tr>
+                <th>
+                    <span class="material-icons">data_saver_off</span>
+                </th>
+                <th>
+                    <span class="material-icons">description</span>
+                </th>
+                <th>
+                    <span class="material-icons">password</span>
+                </th>
+                <!--<th>
+                    <span class="material-icons">point_of_sale</span>
+                </th>
+                <th>
+                    <span class="material-icons">local_offer</span>
+                </th>--> 
+            </tr>
+
+
+
+            
+
+            <!--Table body-->
+            {% for x in accounts %}
+            <div>
+                <tr style="font-weight: 300 !important;">
+                    <th>
+                        {% if x["status"] == 'closed' %}
+                        <span style="color: rgb(0, 180, 0);">⬤</span>
+                        {% elif x["status"] == 'opened' %}
+                        <span style="color: red">⬤</span>
+                        {% endif %}
+                    </th>
+                    <th><h3>{{ x["name"] }}</h3></th>
+                    <th><h3>{{ x["pin"] }}</h3></th>
+                    <!--<th><h3>no of trans</h3></th>
+                    <th><h3>price of current</h3></th>-->
+                </tr>
+            </div>
+            {% endfor %}
+            
+        </table>
+        
+
+    </div>
+</div>
+
+{% endblock %}
