@@ -37,7 +37,7 @@
 * Create *'buffetdb'* database on the MySQL server
 
 ## **Run**
-** Requirements.txt install needs to be done for each part separately (*core*, *dashboard*, *client*)** 
+Requirements.txt install needs to be done for each part separately (*core*, *dashboard*, *client*)
 * Go into part's folder
 * Install required Python libraries
   ```sh
