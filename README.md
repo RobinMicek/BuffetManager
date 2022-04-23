@@ -90,5 +90,10 @@ POS / Kiosk  can be accessed on [`https://local-server-ip:8010`]()
 * Optimize dashboard interface for smaller screens 
 
 
+## **Images**
+![](readme-files/dashboard.png)
+![](readme-files/products.png)
+![](readme-files/client.png)
+
 
 made with ♥ by Robin Míček 
