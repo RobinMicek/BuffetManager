@@ -694,6 +694,8 @@ async def pos_pay(
         FROM accounts_opened \
         WHERE account_pin = {account_pin}")
 
+        db.commit()
+
 
 
 

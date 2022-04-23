@@ -53,4 +53,4 @@ def initialize_db():
     cursor.execute("CREATE TABLE IF NOT EXISTS transactions (id INT AUTO_INCREMENT PRIMARY KEY, account INT, products TEXT, date TINYTEXT, time TINYTEXT, price FLOAT)")
 
 def clear_db():
-    cursor.execute("DROP TABLE IF EXISTS config, products, products_images, products_stock, products_visibility, accounts, accounts_opened, transactions") 
+    cursor.execute("DROP TABLE IF EXISTS config, products, products_images, products_stock, products_visibility, accounts, accounts_opened, transactions")
