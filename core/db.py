@@ -47,7 +47,7 @@ def initialize_db():
     # ACCOUNT TABLES
     cursor.execute("CREATE TABLE IF NOT EXISTS accounts (pin INT PRIMARY KEY, name TINYTEXT)")
     
-    cursor.execute("CREATE TABLE IF NOT EXISTS accounts_opened (id INT PRIMARY KEY, account_pin INT, product_id INT)")
+    cursor.execute("CREATE TABLE IF NOT EXISTS accounts_opened (id INT AUTO_INCREMENT PRIMARY KEY, account_pin INT, product_id INT)")
 
     # TRANSACTIONS TABLE
     cursor.execute("CREATE TABLE IF NOT EXISTS transactions (id INT AUTO_INCREMENT PRIMARY KEY, account INT, products TEXT, date TINYTEXT, time TINYTEXT, price FLOAT)")
